@@ -25,26 +25,31 @@ body {
                       radial-gradient(circle at 90% 80%, rgba(46, 139, 87, 0.05) 0%, transparent 20%);
 }
 
-header img {
-  width: 280px;
-  height: auto;
-  transition: transform 0.3s ease;
-}
-
-header img:hover {
-    transform: scale(1.05);
-}
-
 /* Header & Navigation */
-
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 5%;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
+    width: 100%;
+}
+
+header img {
+    width: 360px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+header img:hover {
+    transform: scale(1.05);
 }
 
 .logo {
@@ -62,10 +67,11 @@ nav {
 .nav-links {
     display: flex;
     list-style: none;
+    gap: 2rem;
 }
 
 .nav-links li {
-    margin-left: 2rem;
+    margin-left: 0;
 }
 
 .nav-links a {
@@ -73,6 +79,7 @@ nav {
     color: var(--primary-blue);
     font-weight: 600;
     transition: color 0.3s;
+    font-size: 1rem;
 }
 
 .nav-links a:hover {
@@ -86,18 +93,21 @@ nav {
     background-position: center;
     background-attachment: fixed;
     color: var(--white);
-    padding: 8rem 5%;
+    padding: 6rem 5%;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 60vh;
+    min-height: 50vh;
+    width: 100%;
 }
 
 .hero h1 {
     font-size: 3rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    font-weight: 700;
 }
 
 .hero p {
@@ -106,6 +116,7 @@ nav {
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+    line-height: 1.5;
 }
 
 /* Sections */
@@ -113,6 +124,7 @@ section {
     padding: 5rem 5%;
     max-width: 1200px;
     margin: 0 auto;
+    width: 100%;
 }
 
 h2 {
@@ -121,6 +133,7 @@ h2 {
     margin-bottom: 3rem;
     font-size: 2.5rem;
     position: relative;
+    font-weight: 700;
 }
 
 h2::after {
@@ -129,7 +142,7 @@ h2::after {
     width: 80px;
     height: 4px;
     background: linear-gradient(to right, var(--primary-blue), var(--secondary-green));
-    margin: 15px auto;
+    margin: 15px auto 0;
     border-radius: 2px;
 }
 
@@ -137,6 +150,7 @@ h2::after {
 #atendimento {
     background-color: var(--gray);
     max-width: 100%;
+    padding: 5rem 5%;
 }
 
 .atendimento-container {
@@ -151,27 +165,56 @@ h2::after {
 .atendimento-card {
     background: var(--white);
     padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     flex: 1;
-    min-width: 300px;
+    min-width: 280px;
     text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 74, 141, 0.08);
+}
+
+.atendimento-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 74, 141, 0.12);
+}
+
+.atendimento-card h3 {
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.atendimento-card p {
+    color: var(--text-color);
+    font-size: 0.95rem;
+    line-height: 1.6;
 }
 
 /* Serviços Section */
+#servicos {
+    background-color: var(--white);
+    max-width: 100%;
+    padding: 5rem 5%;
+}
+
 .servicos-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    padding: 20px 0;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 220px));
+    gap: 2rem;
+    justify-content: center;
+    padding: 0;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .servico-card {
     background-color: var(--white);
     border-radius: 15px;
-    padding: 25px 15px;
+    padding: 2rem 1.5rem;
     text-align: center;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -190,9 +233,10 @@ h2::after {
     height: 120px;
     border-radius: 50%;
     overflow: hidden;
-    margin-bottom: 20px;
-    background-color: #ccc;
+    margin-bottom: 1.5rem;
+    background-color: #ddd;
     border: 3px solid var(--white);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .img-container img {
@@ -203,7 +247,7 @@ h2::after {
 
 .servico-card h3 {
     font-size: 1.1rem;
-    margin-bottom: 20px;
+    margin-bottom: 1.5rem;
     color: #000;
     font-weight: 700;
 }
@@ -219,6 +263,8 @@ h2::after {
     transition: all 0.3s ease;
     display: inline-block;
     box-shadow: 0 4px 15px rgba(102, 204, 122, 0.3);
+    border: none;
+    cursor: pointer;
 }
 
 .btn-agendar:hover {
@@ -227,10 +273,15 @@ h2::after {
     filter: brightness(1.1);
 }
 
+.btn-agendar:active {
+    transform: scale(0.98);
+}
+
 /* Contato Section */
 #contato {
     background-color: var(--gray);
     max-width: 100%;
+    padding: 5rem 5%;
 }
 
 .contato-content {
@@ -238,13 +289,31 @@ h2::after {
     margin: 0 auto;
     background: var(--white);
     padding: 3rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    width: 100%;
 }
 
 .contato-info {
     margin-bottom: 2rem;
     text-align: center;
+}
+
+.contato-info p {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.contato-info a {
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.contato-info a:hover {
+    color: var(--secondary-green);
 }
 
 form {
@@ -257,23 +326,58 @@ input, textarea {
     padding: 0.8rem;
     border: 1px solid #ddd;
     border-radius: 5px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: all 0.3s ease;
 }
 
-.btn-submit {
-    background-color: var(--primary-blue);
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(0, 74, 141, 0.1);
+}
+
+button[type="submit"] {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
     color: var(--white);
     padding: 1rem;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
-    transition: background-color 0.3s;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 74, 141, 0.3);
+}
+
+button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 74, 141, 0.4);
+}
+
+button[type="submit"]:active {
+    transform: translateY(0);
+}
+
+.btn-submit {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
+    color: var(--white);
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
     text-align: center;
     text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 74, 141, 0.3);
 }
 
 .btn-submit:hover {
-    background-color: var(--dark-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 74, 141, 0.4);
 }
 
 /* Footer */
@@ -281,22 +385,11 @@ footer {
     background-color: var(--dark-blue);
     color: var(--white);
     text-align: center;
-    padding: 2rem;
+    padding: 2rem 5%;
+    font-size: 0.95rem;
+    width: 100%;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .hero h1 { font-size: 2rem; }
-    .nav-links { display: none; }
-    .servicos-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-@media (max-width: 480px) {
-    .servicos-grid {
-        grid-template-columns: 1fr;
-    }
-}
 /* Wave Containers */
 .wave-container {
     width: 100%;
@@ -312,8 +405,9 @@ footer {
 .wave-container svg {
     position: relative;
     display: block;
-    width: calc(100% + 1.3px);
-    height: 80px;
+    width: 100%;
+    height: auto;
+    max-height: 80px;
 }
 
 /* Smooth Scrolling */
@@ -321,27 +415,253 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Atendimento Card Icons (Optional improvement) */
-.atendimento-card h3 {
-    color: var(--primary-blue);
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
+/* ===== TABLET RESPONSIVENESS (768px and below) ===== */
+@media (max-width: 768px) {
+    header img {
+        width: 220px;
+    }
+
+    .hero {
+        padding: 4rem 5%;
+        min-height: 45vh;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    section {
+        padding: 3rem 5%;
+    }
+
+    h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .atendimento-container {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .atendimento-card {
+        min-width: 100%;
+    }
+
+    .servicos-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .servico-card {
+        padding: 1.5rem 1rem;
+    }
+
+    .img-container {
+        width: 100px;
+        height: 100px;
+    }
+
+    .servico-card h3 {
+        font-size: 1rem;
+    }
+
+    .btn-agendar {
+        padding: 10px 25px;
+        font-size: 0.9rem;
+    }
+
+    .contato-content {
+        padding: 2rem;
+    }
+
+    .wave-container svg {
+        max-height: 60px;
+    }
 }
 
-/* Form Styling */
-.contato-content form input:focus, 
-.contato-content form textarea:focus {
-    outline: none;
-    border-color: var(--primary-blue);
-    box-shadow: 0 0 0 3px rgba(0, 74, 141, 0.1);
+/* ===== MOBILE RESPONSIVENESS (480px and below) ===== */
+@media (max-width: 480px) {
+    header img {
+        width: 180px;
+    }
+
+    nav {
+        padding: 0.8rem 4%;
+    }
+
+    .hero {
+        padding: 3rem 4%;
+        min-height: 40vh;
+        background-attachment: scroll;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+        margin-bottom: 0.8rem;
+        line-height: 1.2;
+    }
+
+    .hero p {
+        font-size: 0.95rem;
+        margin-bottom: 1.2rem;
+        max-width: 100%;
+    }
+
+    .btn-submit {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.95rem;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    section {
+        padding: 2.5rem 4%;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+        margin-bottom: 1.5rem;
+    }
+
+    h2::after {
+        width: 60px;
+        margin: 10px auto 0;
+    }
+
+    .atendimento-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .atendimento-card {
+        min-width: 100%;
+        padding: 1.5rem 1rem;
+    }
+
+    .atendimento-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .atendimento-card p {
+        font-size: 0.9rem;
+    }
+
+    .servicos-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+
+    .servico-card {
+        padding: 1.5rem 1rem;
+        margin: 0 auto;
+        max-width: 100%;
+    }
+
+    .img-container {
+        width: 90px;
+        height: 90px;
+        margin-bottom: 1rem;
+    }
+
+    .servico-card h3 {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .btn-agendar {
+        padding: 10px 25px;
+        font-size: 0.9rem;
+        width: 100%;
+        max-width: 200px;
+    }
+
+    .contato-content {
+        padding: 1.5rem;
+        border-radius: 10px;
+    }
+
+    .contato-info {
+        margin-bottom: 1.5rem;
+    }
+
+    .contato-info p {
+        font-size: 0.95rem;
+        margin-bottom: 0.8rem;
+    }
+
+    form {
+        gap: 0.8rem;
+    }
+
+    input, textarea {
+        padding: 0.7rem;
+        font-size: 16px;
+    }
+
+    button[type="submit"] {
+        padding: 0.9rem;
+        font-size: 0.95rem;
+    }
+
+    .wave-container svg {
+        max-height: 50px;
+    }
+
+    footer {
+        padding: 1.5rem 4%;
+        font-size: 0.9rem;
+    }
 }
 
-.btn-submit {
-    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
-    box-shadow: 0 4px 15px rgba(0, 74, 141, 0.3);
-}
+/* ===== EXTRA SMALL DEVICES (320px and below) ===== */
+@media (max-width: 320px) {
+    header img {
+        width: 150px;
+    }
 
-.btn-submit:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 74, 141, 0.4);
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    .servico-card {
+        padding: 1rem 0.8rem;
+    }
+
+    .img-container {
+        width: 80px;
+        height: 80px;
+    }
+
+    .btn-agendar {
+        padding: 8px 20px;
+        font-size: 0.85rem;
+    }
+
+    .contato-content {
+        padding: 1.2rem;
+    }
+
+    input, textarea {
+        padding: 0.6rem;
+        font-size: 16px;
+    }
 }
