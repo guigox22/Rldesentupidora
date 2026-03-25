@@ -691,7 +691,7 @@ html {
 /* Ajuste para Tablet (768px e abaixo) */
 @media (max-width: 768px) {
     .whatsapp-float {
-        width: 50%;
+        width: 40%;
         left: 1%;
     }
 }
