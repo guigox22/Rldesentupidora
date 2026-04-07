@@ -93,6 +93,8 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+    height: 220px;        /* controla a altura total */
+  padding: 0 20px;     /* espaço lateral (reduz o vertical) */
 }
 
 nav {
@@ -213,7 +215,8 @@ h2::after {
 #atendimento {
     background-color: var(--gray);
     max-width: 100%;
-    padding: 5rem 5%;
+    height: 270px;        /* controla a altura total */
+  padding: 0 20px;     /* espaço lateral (reduz o vertical) */
 }
 
 .atendimento-container {
@@ -827,5 +830,3 @@ html {
     grid-template-columns: 1fr;
   }
 }
-
-
