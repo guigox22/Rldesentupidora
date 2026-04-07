@@ -12,7 +12,7 @@
 
 .top-bar-container {
     display: flex;
-    justify-content: flex-end; /* Alinhado à direita conforme a imagem */
+    justify-content: center; /* Alinhado ao centro */
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
@@ -150,7 +150,30 @@ header img:hover {
 .nav-links a:hover {
     color: var(--secondary-green);
 }
+/* Logo no mobile centralizado */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
+  header {
+    height: auto; /* deixa o header se ajustar */
+    padding: -1100px;
+  }
+
+  header img {
+    width: 115px; /* opcional: reduz a logo no mobile */
+    margin-bottom: 5px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+}
 /* Hero Section */
 .hero {
     background: linear-gradient(rgba(0, 74, 141, 0.7), rgba(46, 139, 87, 0.7)), url('Fotos/fundo-agua.jpg');
